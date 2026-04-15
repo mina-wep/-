@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حافلتي</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Cairo', sans-serif;
+            background-color: #FFF9E9;
+            color: #333;
+        }
+
+        /* الهيدر */
+        header {
+            background-color: #FFD54F;
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid #F4B400;
+        }
+
+        header img {
+            height: 55px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 26px;
+            color: #4E342E;
+        }
+
+        /* قسم البطل */
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .hero h2 {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+        .hero button {
+            background-color: #FFB300;
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            font-size: 20px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .hero button:hover {
+            background-color: #F39C12;
+        }
+
+        /* صورة الباص */
+        .bus-img {
+            width: 280px;
+            margin-top: 20px;
+        }
+
+        /* الفوتر */
+        footer {
+            background-color: #FFE082;
+            padding: 15px;
+            text-align: center;
+            margin-top: 40px;
+            font-size: 14px;
+            color: #5D4037;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- الهيدر -->
+    <header>
+        <h1>حافلتي</h1>
+        <!-- ضعي شعارك هنا -->
+        <img src="logo.png" alt="شعار حافلتي">
+    </header>
+
+    <!-- قسم البطل -->
+    <section class="hero">
+        <h2>رحلاتك المدرسية آمنة ومريحة</h2>
+        <p>حدّد قبل الساعة 12 بالليل إذا كنت ستذهب مع الباص غدًا، ودع النظام ينشئ أفضل مسار للسائق.</p>
+
+        <button>سجّل رحلتك</button>
+
+        <!-- صورة الباص -->
+        <img class="bus-img" src="bus.png" alt="School Bus">
+    </section>
+
+    <!-- الفوتر -->
+    <footer>
+        © 2026 — مشروع التخرج | تطبيق حافلتي
+    </footer>
+
+</body>
+</html>
