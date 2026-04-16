@@ -60,13 +60,33 @@
       line-height: 1.8;
     }
 
-    /* توزيع البطاقات يمين ويسار */
+    .date-box {
+      text-align: center;
+      font-size: 20px;
+      font-weight: 700;
+      margin-top: 10px;
+      color: #0b1b3b;
+    }
+
+    /* توزيع البطاقات */
     .cards-container {
       max-width: 900px;
       margin: 40px auto;
       display: flex;
       justify-content: space-between;
       gap: 20px;
+    }
+
+    /* أنيميشن الظهور */
+    @keyframes fadeUp {
+      0% {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .card {
@@ -77,11 +97,13 @@
       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
       text-align: center;
       cursor: pointer;
-      transition: 0.2s;
+      transition: 0.25s;
+      animation: fadeUp 0.8s ease forwards;
     }
 
+    /* تكبير عند المرور */
     .card:hover {
-      transform: scale(1.03);
+      transform: scale(1.05);
     }
 
     .logout-btn {
@@ -101,7 +123,6 @@
 
 <body>
 
-  <!-- HEADER -->
   <header>
     <div class="nav">
       <div class="logo" onclick="location.href='index.html'">
@@ -114,17 +135,17 @@
     </div>
   </header>
 
-  <!-- WELCOME -->
-  <h2 id="welcomeText" style="text-align:center; margin:30px 0; font-size:28px; font-weight:800;"></h2>
+  <h2 id="welcomeText" style="text-align:center; margin:20px 0; font-size:28px; font-weight:800;"></h2>
 
-  <!-- USER INFO -->
+  <!-- التاريخ الكامل -->
+  <div class="date-box" id="todayDate"></div>
+
   <div class="info-box">
     <div><strong>العنوان:</strong> <span id="userAddress"></span></div>
     <div><strong>رقم الجوال:</strong> <span id="userPhone"></span></div>
     <div><strong>آخر حضور:</strong> <span id="lastAttendance">—</span></div>
   </div>
 
-  <!-- ATTENDANCE OPTIONS (يمين / يسار) -->
   <div class="cards-container">
 
     <div class="card" onclick="markAttendance('حاضر')">
@@ -155,14 +176,34 @@
     document.getElementById("lastAttendance").innerText =
       localStorage.getItem("attendance") || "—";
 
-    // تسجيل الحضور
+    // اليوم + التاريخ الميلادي + الهجري
+    function updateDates() {
+      const today = new Date();
+
+      const days = ["الأحد","الاثنين","الثلاثاء","الأربعاء","الخميس","الجمعة","السبت"];
+      const dayName = days[today.getDay()];
+
+      const months = ["يناير","فبراير","مارس","أبريل","مايو","يونيو","يوليو","أغسطس","سبتمبر","أكتوبر","نوفمبر","ديسمبر"];
+      const miladiDate = today.getDate() + " " + months[today.getMonth()] + " " + today.getFullYear();
+
+      const hijri = new Intl.DateTimeFormat("ar-SA-u-ca-islamic", {
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+      }).format(today);
+
+      document.getElementById("todayDate").innerText =
+        "اليوم: " + dayName + " — " + miladiDate + " — " + hijri + "هـ";
+    }
+
+    updateDates();
+
     function markAttendance(status) {
       localStorage.setItem("attendance", status);
       document.getElementById("lastAttendance").innerText = status;
       alert("تم تسجيل حضورك");
     }
 
-    // تسجيل خروج
     function logout() {
       localStorage.clear();
       location.href = "login.html";
