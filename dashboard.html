@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>لوحة المستخدم - حافلتي</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Tajawal", sans-serif;
+      background: #f5f7fb;
+      color: #0b1b3b;
+    }
+
+    header {
+      background: #0b1b3b;
+      padding: 15px 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: white;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+    }
+
+    .logo-icon {
+      background: #ffc928;
+      width: 45px;
+      height: 45px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      font-weight: bold;
+      color: #0b1b3b;
+    }
+
+    .info-box {
+      max-width: 500px;
+      margin: 20px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .date-box {
+      text-align: center;
+      font-size: 20px;
+      font-weight: 700;
+      margin-top: 10px;
+      color: #0b1b3b;
+    }
+
+    /* توزيع البطاقات */
+    .cards-container {
+      max-width: 900px;
+      margin: 40px auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    /* أنيميشن الظهور */
+    @keyframes fadeUp {
+      0% {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .card {
+      flex: 1;
+      background: white;
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      text-align: center;
+      cursor: pointer;
+      transition: 0.25s;
+      animation: fadeUp 0.8s ease forwards;
+    }
+
+    /* تكبير عند المرور */
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .logout-btn {
+      display: block;
+      width: 200px;
+      margin: 30px auto;
+      padding: 12px;
+      background: #ff4d4d;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="nav">
+      <div class="logo" onclick="location.href='index.html'">
+        <div class="logo-icon">🚌</div>
+        <div>
+          <div style="font-size:18px; font-weight:800;">حافلتي</div>
+          <div style="font-size:13px; opacity:0.8;">حلول نقل مدرسية مبتكرة</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <h2 id="welcomeText" style="text-align:center; margin:20px 0; font-size:28px; font-weight:800;"></h2>
+
+  <!-- التاريخ الكامل -->
+  <div class="date-box" id="todayDate"></div>
+
+  <div class="info-box">
+    <div><strong>العنوان:</strong> <span id="userAddress"></span></div>
+    <div><strong>رقم الجوال:</strong> <span id="userPhone"></span></div>
+    <div><strong>آخر حضور:</strong> <span id="lastAttendance">—</span></div>
+  </div>
+
+  <div class="cards-container">
+
+    <div class="card" onclick="markAttendance('حاضر')">
+      <div style="font-size:50px; margin-bottom:10px;">✅</div>
+      <h3>سأحضر اليوم</h3>
+    </div>
+
+    <div class="card" onclick="markAttendance('غائب')">
+      <div style="font-size:50px; margin-bottom:10px;">🚫</div>
+      <h3>لن أحضر اليوم</h3>
+    </div>
+
+  </div>
+
+  <button class="logout-btn" onclick="logout()">تسجيل خروج</button>
+
+  <script>
+    // عرض بيانات المستخدم
+    document.getElementById("welcomeText").innerText =
+      "مرحباً، " + (localStorage.getItem("userName") || "ضيف");
+
+    document.getElementById("userAddress").innerText =
+      localStorage.getItem("userAddress") || "—";
+
+    document.getElementById("userPhone").innerText =
+      localStorage.getItem("userPhone") || "—";
+
+    document.getElementById("lastAttendance").innerText =
+      localStorage.getItem("attendance") || "—";
+
+    // اليوم + التاريخ الميلادي + الهجري
+    function updateDates() {
+      const today = new Date();
+
+      const days = ["الأحد","الاثنين","الثلاثاء","الأربعاء","الخميس","الجمعة","السبت"];
+      const dayName = days[today.getDay()];
+
+      const months = ["يناير","فبراير","مارس","أبريل","مايو","يونيو","يوليو","أغسطس","سبتمبر","أكتوبر","نوفمبر","ديسمبر"];
+      const miladiDate = today.getDate() + " " + months[today.getMonth()] + " " + today.getFullYear();
+
+      const hijri = new Intl.DateTimeFormat("ar-SA-u-ca-islamic", {
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+      }).format(today);
+
+      document.getElementById("todayDate").innerText =
+        "اليوم: " + dayName + " — " + miladiDate + " — " + hijri + "هـ";
+    }
+
+    updateDates();
+
+    function markAttendance(status) {
+      localStorage.setItem("attendance", status);
+      document.getElementById("lastAttendance").innerText = status;
+      alert("تم تسجيل حضورك");
+    }
+
+    function logout() {
+      localStorage.clear();
+      location.href = "login.html";
+    }
+  </script>
+
+</body>
+</html>
