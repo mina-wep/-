@@ -2,242 +2,162 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <title>حافلتي - رحلتك المدرسية آمنة</title>
+  <title>حافلتي - رحلتك المدرسية آمنة ومريحة</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <style>
-    :root {
-      --yellow: #ffc928;
-      --dark-blue: #0b1b3b;
-      --light-blue: #e9f3ff;
-      --white: #ffffff;
-      --gray: #666666;
-      --bg: #f7f8fc;
-      --card: #ffffff;
-      --accent: #1f6feb;
-      --shadow: 0 10px 25px rgba(0,0,0,0.08);
-      --radius-lg: 18px;
-      --radius-md: 12px;
-      --radius-sm: 8px;
-    }
-
-    * {
-      box-sizing: border-box;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-
     body {
       margin: 0;
-      background: var(--bg);
-      color: var(--dark-blue);
+      font-family: "Tajawal", sans-serif;
+      background: #f5f7fb;
+      color: #0b1b3b;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* NAVBAR */
+    /* HEADER */
     header {
-      background: var(--white);
-      box-shadow: var(--shadow);
-      position: sticky;
-      top: 0;
-      z-index: 100;
+      background: #0b1b3b;
+      padding: 15px 0;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
 
     .nav {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0.8rem 1.5rem;
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 1rem;
+      color: white;
     }
 
     .logo {
       display: flex;
       align-items: center;
-      gap: 0.6rem;
+      gap: 10px;
+      cursor: pointer;
     }
 
     .logo-icon {
-      width: 40px;
-      height: 40px;
+      background: #ffc928;
+      width: 45px;
+      height: 45px;
       border-radius: 12px;
-      background: var(--yellow);
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 22px;
-    }
-
-    .logo-text-main {
-      font-weight: 800;
-      font-size: 1.1rem;
-    }
-
-    .logo-text-sub {
-      font-size: 0.75rem;
-      color: var(--gray);
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      flex-wrap: wrap;
-      justify-content: flex-end;
+      font-weight: bold;
+      color: #0b1b3b;
     }
 
     .nav-links a {
-      font-size: 0.9rem;
-      padding: 0.35rem 0.7rem;
-      border-radius: 999px;
-      color: var(--dark-blue);
+      color: white;
+      margin-left: 18px;
+      font-size: 15px;
+      text-decoration: none;
+      transition: 0.2s;
     }
 
     .nav-links a:hover {
-      background: var(--light-blue);
+      color: #ffc928;
     }
 
     .nav-login {
-      background: var(--dark-blue);
-      color: var(--white) !important;
-      padding: 0.45rem 1rem !important;
-      border-radius: 999px;
-      font-size: 0.9rem;
+      background: #ffc928;
+      padding: 8px 18px;
+      border-radius: 25px;
+      color: #0b1b3b !important;
+      font-weight: bold;
     }
 
-    /* HERO SECTION */
+    /* HERO */
     .hero {
-      max-width: 1100px;
-      margin: 1.5rem auto 2rem;
-      padding: 1.5rem;
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
       display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      gap: 1.5rem;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
       align-items: center;
     }
 
-    .hero-text {
-      padding: 1rem;
-    }
-
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      background: var(--light-blue);
-      color: var(--accent);
-      padding: 0.25rem 0.7rem;
-      border-radius: 999px;
-      font-size: 0.8rem;
-      margin-bottom: 0.6rem;
-    }
-
-    .hero-title {
-      font-size: 2rem;
+    .hero h1 {
+      font-size: 36px;
+      margin-bottom: 15px;
       font-weight: 800;
-      margin: 0 0 0.5rem;
     }
 
-    .hero-subtitle {
-      font-size: 0.98rem;
-      color: var(--gray);
-      line-height: 1.7;
-      margin-bottom: 1.2rem;
+    .hero p {
+      font-size: 17px;
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 20px;
     }
 
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.7rem;
-      margin-bottom: 1.2rem;
+    .hero-buttons button {
+      padding: 12px 22px;
+      border-radius: 30px;
+      border: none;
+      font-size: 15px;
+      cursor: pointer;
+      margin-left: 10px;
     }
 
     .btn-primary {
-      background: var(--yellow);
-      color: var(--dark-blue);
-      padding: 0.7rem 1.4rem;
-      border-radius: 999px;
-      font-weight: 600;
-      font-size: 0.95rem;
-      border: none;
-      cursor: pointer;
-      box-shadow: var(--shadow);
+      background: #ffc928;
+      color: #0b1b3b;
+      font-weight: bold;
     }
 
     .btn-secondary {
-      background: transparent;
-      color: var(--dark-blue);
-      padding: 0.7rem 1.2rem;
-      border-radius: 999px;
-      font-weight: 500;
-      font-size: 0.9rem;
-      border: 1px solid #d0d7e2;
-      cursor: pointer;
+      background: white;
+      border: 2px solid #0b1b3b;
+      color: #0b1b3b;
     }
 
-    .hero-note {
-      font-size: 0.8rem;
-      color: var(--gray);
-    }
-
-    .hero-visual {
-      background: linear-gradient(145deg, #ffe58a, #ffc928);
-      border-radius: 26px;
-      padding: 1.2rem;
-      box-shadow: var(--shadow);
-      position: relative;
-      overflow: hidden;
-      min-height: 230px;
-    }
-
-    .bus-card {
-      background: var(--white);
+    .hero-card {
+      background: white;
+      padding: 20px;
       border-radius: 20px;
-      padding: 1rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.7rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     }
 
-    .bus-top {
+    .hero-card-top {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      font-size: 0.8rem;
-      color: var(--gray);
+      color: #777;
+      font-size: 14px;
+      margin-bottom: 15px;
     }
 
-    .bus-illustration {
-      margin-top: 0.4rem;
-      background: var(--light-blue);
+    .hero-bus-box {
+      background: #e9f3ff;
+      padding: 15px;
       border-radius: 18px;
-      padding: 0.7rem;
       display: flex;
+      gap: 15px;
       align-items: center;
-      gap: 0.7rem;
     }
 
     .bus-icon {
-      width: 70px;
-      height: 45px;
+      width: 90px;
+      height: 55px;
+      background: #ffc928;
       border-radius: 12px;
-      background: var(--yellow);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 26px;
+      font-weight: bold;
+      color: #0b1b3b;
     }
 
-    .bus-passengers {
+    .passengers {
       display: flex;
-      gap: 0.3rem;
+      gap: 5px;
+      margin: 8px 0;
     }
 
-    .passenger {
+    .p {
       width: 14px;
       height: 14px;
       border-radius: 50%;
@@ -247,566 +167,440 @@
     .p2 { background: #4dabf7; }
     .p3 { background: #51cf66; }
     .p4 { background: #845ef7; }
-
-    .bus-label {
-      font-size: 0.8rem;
-      font-weight: 600;
-    }
-
-    .hero-tagline {
-      font-size: 0.85rem;
-      color: var(--dark-blue);
-      margin-top: 0.4rem;
-    }
-
-    /* STATS */
-    .stats {
-      max-width: 1100px;
-      margin: 0 auto 2rem;
-      padding: 0 1.5rem;
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1rem;
-    }
-
-    .stat-card {
-      background: var(--dark-blue);
-      color: var(--white);
-      border-radius: var(--radius-lg);
-      padding: 1rem 1.2rem;
-      text-align: center;
-    }
-
-    .stat-value {
-      font-size: 1.4rem;
-      font-weight: 800;
-      margin-bottom: 0.2rem;
-    }
-
-    .stat-label {
-      font-size: 0.85rem;
-      opacity: 0.9;
-    }
-
-    /* FEATURES */
-    .section {
-      max-width: 1100px;
-      margin: 0 auto 2.5rem;
-      padding: 0 1.5rem;
-    }
-
-    .section-title {
-      font-size: 1.4rem;
-      font-weight: 800;
-      margin-bottom: 0.3rem;
-    }
-
-    .section-subtitle {
-      font-size: 0.9rem;
-      color: var(--gray);
-      margin-bottom: 1.2rem;
-    }
-
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 1rem;
-    }
-
-    .feature-card {
-      background: var(--card);
-      border-radius: var(--radius-lg);
-      padding: 1rem;
-      box-shadow: var(--shadow);
-      font-size: 0.9rem;
-    }
-
-    .feature-emoji {
-      font-size: 1.4rem;
-      margin-bottom: 0.4rem;
-    }
-
-    .feature-title {
-      font-weight: 700;
-      margin-bottom: 0.2rem;
-    }
-
-    .feature-text {
-      font-size: 0.85rem;
-      color: var(--gray);
-    }
-
-    /* ROUTES */
-    .routes-wrapper {
-      background: var(--white);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow);
-      padding: 1.2rem;
-    }
-
-    .routes-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 0.8rem;
-      flex-wrap: wrap;
-    }
-
-    .routes-title {
-      font-weight: 700;
-      font-size: 1rem;
-    }
-
-    .routes-search {
-      flex: 1;
-      min-width: 220px;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      background: #f1f3f9;
-      border-radius: 999px;
-      padding: 0.4rem 0.8rem;
-      font-size: 0.85rem;
-      color: var(--gray);
-    }
-
-    .routes-search input {
-      border: none;
-      outline: none;
-      background: transparent;
-      flex: 1;
-      font-size: 0.85rem;
-    }
-
-    .route-list {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      margin-top: 0.5rem;
-    }
-
-    .route-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.6rem 0.8rem;
-      border-radius: var(--radius-md);
-      background: #f8f9ff;
-      font-size: 0.85rem;
-    }
-
-    .route-left {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .route-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-    }
-
-    .dot-blue { background: #1f6feb; }
-    .dot-orange { background: #f59f00; }
-    .dot-green { background: #37b24d; }
-    .dot-red { background: #f03e3e; }
-    .dot-purple { background: #845ef7; }
-
-    .route-time {
-      color: var(--gray);
-      font-size: 0.8rem;
-    }
-
-    /* HOW IT WORKS */
-    .steps-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-
-    .step-card {
-      background: var(--card);
-      border-radius: var(--radius-lg);
-      padding: 1rem;
-      box-shadow: var(--shadow);
-      font-size: 0.9rem;
-    }
-
-    .step-number {
-      width: 26px;
-      height: 26px;
-      border-radius: 50%;
-      background: var(--yellow);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.85rem;
-      font-weight: 700;
-      margin-bottom: 0.4rem;
-    }
-
-    .step-title {
-      font-weight: 700;
-      margin-bottom: 0.2rem;
-    }
-
-    .step-text {
-      font-size: 0.85rem;
-      color: var(--gray);
-    }
-
-    .cta-banner {
-      margin-top: 1.5rem;
-      background: var(--yellow);
-      border-radius: var(--radius-lg);
-      padding: 1rem 1.2rem;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.8rem;
-    }
-
-    .cta-text-main {
-      font-weight: 800;
-      font-size: 1.1rem;
-    }
-
-    .cta-text-sub {
-      font-size: 0.9rem;
-    }
-
-    /* FOOTER */
-    footer {
-      background: var(--dark-blue);
-      color: var(--white);
-      margin-top: 2rem;
-      padding: 1.5rem 1.5rem 1rem;
-    }
-
-    .footer-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      gap: 1.5rem;
-    }
-
-    .footer-title {
-      font-weight: 700;
-      margin-bottom: 0.4rem;
-    }
-
-    .footer-text {
-      font-size: 0.85rem;
-      color: #d0d7ff;
-      margin-bottom: 0.6rem;
-    }
-
-    .footer-contact p {
-      margin: 0.1rem 0;
-      font-size: 0.85rem;
-    }
-
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      font-size: 0.85rem;
-    }
-
-    .footer-links a {
-      color: #d0d7ff;
-    }
-
-    .footer-bottom {
-      max-width: 1100px;
-      margin: 1rem auto 0;
-      font-size: 0.75rem;
-      color: #9aa4e0;
-      text-align: center;
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 900px) {
-      .hero {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .stats {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-      .features-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-      .steps-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-      .footer-inner {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    @media (max-width: 640px) {
-      .nav {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .stats {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .features-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .steps-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .hero {
-        padding: 1rem;
-      }
-      .section {
-        padding: 0 1rem;
-      }
-    }
   </style>
 </head>
+
 <body>
 
-  <!-- NAVBAR -->
+  <!-- HEADER -->
   <header>
-    <nav class="nav">
-      <div class="logo">
+    <div class="nav">
+      <div class="logo" onclick="location.href='index.html'">
         <div class="logo-icon">🚌</div>
         <div>
-          <div class="logo-text-main">حافلتي</div>
-          <div class="logo-text-sub">حلول نقل مدرسية مبتكرة</div>
+          <div style="font-size: 18px; font-weight: 800;">حافلتي</div>
+          <div style="font-size: 13px; opacity: 0.8;">حلول نقل مدرسية مبتكرة</div>
         </div>
       </div>
+
       <div class="nav-links">
-        <a href="#home">الصفحة الرئيسية</a>
-        <a href="#tracking">تتبع مباشر</a>
-        <a href="#routes">المسارات والمواعيد</a>
-        <a href="#register">التسجيل</a>
-        <a href="#support">الدعم الفني</a>
-        <a href="#login" class="nav-login">تسجيل الدخول</a>
+        <a href="index.html">الصفحة الرئيسية</a>
+        <a href="tracking.html">تتبع مباشر</a>
+        <a href="routes.html">المسارات</a>
+        <a href="register.html">التسجيل</a>
+        <a href="contact.html">الدعم الفني</a>
+        <a href="register.html" class="nav-login">تسجيل الدخول</a>
       </div>
-    </nav>
+    </div>
   </header>
 
   <!-- HERO -->
-  <main id="home">
-    <section class="hero">
-      <div class="hero-text">
-        <div class="hero-badge">
-          <span>🚍</span>
-          <span>نظام ذكي لإدارة رحلات الباص المدرسي</span>
-        </div>
-        <h1 class="hero-title">حافلتي - رحلتك المدرسية آمنة ومريحة!</h1>
-        <p class="hero-subtitle">
-          حلول نقل مدرسية مبتكرة ومسارات مخصصة تضمن السلامة والراحة لأبنائك في كل رحلة،
-          مع تتبع مباشر وإشعارات فورية لوصول ومغادرة الحافلة.
-        </p>
-        <div class="hero-actions">
-          <button class="btn-primary">سجل الآن مجاناً</button>
-          <button class="btn-secondary">تواصل معنا</button>
-        </div>
-        <p class="hero-note">
-          قبل الساعة 12 مساءً يمكن لولي الأمر تحديد ما إذا كان الطالب سيذهب مع الحافلة غداً،
-          ليتم إنشاء مسار ذكي يبدأ من البيوت الأبعد وصولاً إلى الأقرب للمدرسة.
-        </p>
+  <section class="hero">
+    <div>
+      <h1>حافلتي - رحلتك المدرسية آمنة ومريحة!</h1>
+      <p>
+        حلول نقل مدرسية مبتكرة ومسارات مخصصة تضمن السلامة والراحة لأبنائك في كل رحلة،
+        مع إمكانية تنظيم الرحلات اليومية بسهولة.
+      </p>
+
+      <div class="hero-buttons">
+        <button class="btn-primary" onclick="location.href='register.html'">سجل الآن مجاناً</button>
+        <button class="btn-secondary" onclick="location.href='contact.html'">تواصل معنا</button>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <div class="hero-card-top">
+        <span>رحلة اليوم</span>
+        <span>05:30 ص</span>
       </div>
 
-      <div class="hero-visual">
-        <div class="bus-card">
-          <div class="bus-top">
-            <span>رحلة اليوم</span>
-            <span>05:30 ص</span>
-          </div>
-          <div class="bus-illustration">
-            <div class="bus-icon">🚌</div>
-            <div>
-              <div class="bus-label">SCHOOL BUS</div>
-              <div class="bus-passengers">
-                <div class="passenger p1"></div>
-                <div class="passenger p2"></div>
-                <div class="passenger p3"></div>
-                <div class="passenger p4"></div>
-              </div>
-              <div class="hero-tagline">رحلة آمنة من البيت إلى المدرسة</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+      <div class="hero-bus-box">
+        <div class="bus-icon">SCHOOL</div>
 
-    <!-- STATS -->
-    <section class="stats">
-      <div class="stat-card">
-        <div class="stat-value">99%</div>
-        <div class="stat-label">رضا أولياء الأمور</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-value">20+</div>
-        <div class="stat-label">مسار مدرسي</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-value">500+</div>
-        <div class="stat-label">طالب يومياً</div>
-      </div>
-    </section>
-
-    <!-- FEATURES -->
-    <section class="section" id="tracking">
-      <h2 class="section-title">مميزاتنا</h2>
-      <p class="section-subtitle">نقدم نظاماً متكاملاً لإدارة وتتبع الحافلات المدرسية بكل سهولة وأمان.</p>
-
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-emoji">🤖</div>
-          <div class="feature-title">آليات تتبع ذكية</div>
-          <div class="feature-text">تتبع جميع الرحلات بأمان عبر نظام تحديد المواقع.</div>
-        </div>
-        <div class="feature-card">
-          <div class="feature-emoji">👨‍✈️</div>
-          <div class="feature-title">سائقون مؤهلون</div>
-          <div class="feature-text">سائقون مدربون لضمان أعلى معايير السلامة.</div>
-        </div>
-        <div class="feature-card">
-          <div class="feature-emoji">📍</div>
-          <div class="feature-title">تتبع مباشر</div>
-          <div class="feature-text">شاهد حافلتك على الخريطة في أي وقت.</div>
-        </div>
-        <div class="feature-card">
-          <div class="feature-emoji">🛡️</div>
-          <div class="feature-title">أمان مضمون</div>
-          <div class="feature-text">ضمان السلامة في كل رحلة من وإلى المدرسة.</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ROUTES -->
-    <section class="section" id="routes">
-      <h2 class="section-title">جدول المسارات</h2>
-      <p class="section-subtitle">استعرض المسارات والمواعيد المتاحة وتابع تنظيم رحلات الطلاب.</p>
-
-      <div class="routes-wrapper">
-        <div class="routes-header">
-          <div class="routes-title">المسارات الحالية</div>
-          <div class="routes-search">
-            🔍
-            <input type="text" placeholder="ابحث عن المسارات" />
-          </div>
-        </div>
-
-        <div class="route-list">
-          <div class="route-item">
-            <div class="route-left">
-              <div class="route-dot dot-blue"></div>
-              <span>مسار حي المشهد (أ)</span>
-            </div>
-            <div class="route-time">05:00 - 1:33</div>
-          </div>
-          <div class="route-item">
-            <div class="route-left">
-              <div class="route-dot dot-orange"></div>
-              <span>مسار حي المشهد (ب)</span>
-            </div>
-            <div class="route-time">05:00 - 1:33</div>
-          </div>
-          <div class="route-item">
-            <div class="route-left">
-              <div class="route-dot dot-green"></div>
-              <span>مسار حي المشهد (ج)</span>
-            </div>
-            <div class="route-time">05:00 - 2:22</div>
-          </div>
-          <div class="route-item">
-            <div class="route-left">
-              <div class="route-dot dot-red"></div>
-              <span>مسار حي الزهرة</span>
-            </div>
-            <div class="route-time">05:30 - 1:45</div>
-          </div>
-          <div class="route-item">
-            <div class="route-left">
-              <div class="route-dot dot-purple"></div>
-              <span>مسار حي الروضة</span>
-            </div>
-            <div class="route-time">05:15 - 2:00</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- HOW IT WORKS -->
-    <section class="section" id="register">
-      <h2 class="section-title">كيف يعمل النظام؟</h2>
-      <p class="section-subtitle">خطوات بسيطة تضمن لك تجربة مريحة وآمنة في إدارة رحلات الباص المدرسي.</p>
-
-      <div class="steps-grid">
-        <div class="step-card">
-          <div class="step-number">1</div>
-          <div class="step-title">سجّل ابنك</div>
-          <div class="step-text">
-            قم بتسجيل بيانات طفلك واختيار المسار المناسب لكم حسب الحي وموقع السكن.
-          </div>
-        </div>
-        <div class="step-card">
-          <div class="step-number">2</div>
-          <div class="step-title">تابع الرحلة</div>
-          <div class="step-text">
-            تابع موقع الحافلة بشكل مباشر من تطبيقك أو من لوحة التحكم الخاصة بولي الأمر.
-          </div>
-        </div>
-        <div class="step-card">
-          <div class="step-number">3</div>
-          <div class="step-title">استقبل الإشعارات</div>
-          <div class="step-text">
-            احصل على إشعارات فور وصول الحافلة ومغادرتها، وتأكيد صعود ونزول الطالب.
-          </div>
-        </div>
-      </div>
-
-      <div class="cta-banner">
         <div>
-          <div class="cta-text-main">ابدأ رحلة آمنة اليوم!</div>
-          <div class="cta-text-sub">
-            انضم إلى مئات الأسر التي تثق بحافلتي لنقل أبنائهم من وإلى المدرسة.
-          </div>
-        </div>
-        <button class="btn-primary">سجل الآن مجاناً</button>
-      </div>
-    </section>
-  </main>
+          <div style="font-weight: bold; margin-bottom: 5px;">SCHOOL BUS</div>
 
-  <!-- FOOTER -->
-  <footer id="support">
-    <div class="footer-inner">
-      <div>
-        <div class="footer-title">تواصل معنا</div>
-        <p class="footer-text">
-          لأي استفسارات أو دعم فني، يسعدنا تواصلك معنا عبر القنوات التالية:
-        </p>
-        <div class="footer-contact">
-          <p>📧 info@hafilti.com</p>
-          <p>📞 920-000-000</p>
-          <p>📍 المملكة العربية السعودية</p>
-        </div>
-      </div>
-      <div>
-        <div class="footer-title">روابط سريعة</div>
-        <div class="footer-links">
-          <a href="#home">الصفحة الرئيسية</a>
-          <a href="#tracking">تتبع مباشر</a>
-          <a href="#routes">المسارات والمواعيد</a>
-          <a href="#register">التسجيل</a>
-          <a href="#support">الدعم الفني</a>
+          <div class="passengers">
+            <div class="p p1"></div>
+            <div class="p p2"></div>
+            <div class="p p3"></div>
+            <div class="p p4"></div>
+          </div>
+
+          <div style="font-size: 13px; color: #0b1b3b;">
+            رحلة آمنة من البيت إلى المدرسة
+          </div>
         </div>
       </div>
     </div>
-    <div class="footer-bottom">
+  </section>
+<!-- FEATURES -->
+  <section style="max-width:1200px; margin:40px auto; padding:20px;">
+    <h2 style="font-size:26px; font-weight:800; margin-bottom:10px;">مميزاتنا</h2>
+    <p style="color:#555; margin-bottom:25px;">حلول نقل مدرسية مبتكرة تضمن السلامة والراحة في كل رحلة.</p>
+
+    <div style="
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:20px;
+    ">
+      <div style="background:white; padding:20px; border-radius:18px; box-shadow:0 8px 20px rgba(0,0,0,0.08); text-align:center;">
+        <div style="font-size:30px;">🤖</div>
+        <h3 style="margin:10px 0 5px; font-size:17px;">آليات تتبع ذكية</h3>
+        <p style="color:#666; font-size:14px;">تتبع جميع الرحلات بأمان</p>
+      </div>
+
+      <div style="background:white; padding:20px; border-radius:18px; box-shadow:0 8px 20px rgba(0,0,0,0.08); text-align:center;">
+        <div style="font-size:30px;">👨‍✈️</div>
+        <h3 style="margin:10px 0 5px; font-size:17px;">سائقون مؤهلون</h3>
+        <p style="color:#666; font-size:14px;">سائقون مدربون لضمان السلامة</p>
+      </div>
+
+      <div style="background:white; padding:20px; border-radius:18px; box-shadow:0 8px 20px rgba(0,0,0,0.08); text-align:center;">
+        <div style="font-size:30px;">📍</div>
+        <h3 style="margin:10px 0 5px; font-size:17px;">تتبع مباشر</h3>
+        <p style="color:#666; font-size:14px;">شاهد حافلتك على الخريطة</p>
+      </div>
+
+      <div style="background:white; padding:20px; border-radius:18px; box-shadow:0 8px 20px rgba(0,0,0,0.08); text-align:center;">
+        <div style="font-size:30px;">🛡️</div>
+        <h3 style="margin:10px 0 5px; font-size:17px;">أمان مضمون</h3>
+        <p style="color:#666; font-size:14px;">ضمان السلامة في كل رحلة</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROUTES -->
+  <section style="max-width:1200px; margin:40px auto; padding:20px;">
+    <h2 style="font-size:26px; font-weight:800; margin-bottom:10px;">جدول المسارات</h2>
+    <p style="color:#555; margin-bottom:25px;">استعرض المسارات والمواعيد المتاحة وتابع تنظيم رحلات الطلاب.</p>
+
+    <div style="background:white; padding:20px; border-radius:20px; box-shadow:0 8px 20px rgba(0,0,0,0.08);">
+
+      <div style="
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        flex-wrap:wrap;
+        gap:15px;
+        margin-bottom:20px;
+      ">
+        <div style="font-weight:bold; font-size:17px;">المسارات الحالية</div>
+
+        <div style="
+          background:#f1f3f9;
+          padding:10px 15px;
+          border-radius:30px;
+          display:flex;
+          align-items:center;
+          gap:10px;
+          flex:1;
+          max-width:300px;
+        ">
+          🔍
+          <input type="text" placeholder="بحث عن المسارات" style="
+            border:none;
+            outline:none;
+            background:transparent;
+            flex:1;
+          ">
+        </div>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:12px;">
+
+        <div style="
+          background:#f8f9ff;
+          padding:12px 15px;
+          border-radius:14px;
+          display:flex;
+          justify-content:space-between;
+          align-items:center;
+        ">
+          <div style="display:flex; align-items:center; gap:8px;">
+            <div style="width:10px; height:10px; background:#1f6feb; border-radius:50%;"></div>
+            <span>مسار حي المشهد (أ)</span>
+          </div>
+          <span style="color:#777; font-size:14px;">11:45 - 03:30</span>
+        </div>
+
+        <div style="
+          background:#f8f9ff;
+          padding:12px 15px;
+          border-radius:14px;
+          display:flex;
+          justify-content:space-between;
+          align-items:center;
+        ">
+          <div style="display:flex; align-items:center; gap:8px;">
+            <div style="width:10px; height:10px; background:#f59f00; border-radius:50%;"></div>
+            <span>مسار حي المشهد (ب)</span>
+          </div>
+          <span style="color:#777; font-size:14px;">11:45 - 03:30</span>
+        </div>
+
+        <div style="
+          background:#f8f9ff;
+          padding:12px 15px;
+          border-radius:14px;
+          display:flex;
+          justify-content:space-between;
+          align-items:center;
+        ">
+          <div style="display:flex; align-items:center; gap:8px;">
+            <div style="width:10px; height:10px; background:#37b24d; border-radius:50%;"></div>
+            <span>مسار حي المشهد (ج)</span>
+          </div>
+          <span style="color:#777; font-size:14px;">11:45 - 03:30</span>
+        </div>
+
+        <div style="
+          background:#f8f9ff;
+          padding:12px 15px;
+          border-radius:14px;
+          display:flex;
+          justify-content:space-between;
+          align-items:center;
+        ">
+          <div style="display:flex; align-items:center; gap:8px;">
+            <div style="width:10px; height:10px; background:#f03e3e; border-radius:50%;"></div>
+            <span>مسار حي الزهرة</span>
+          </div>
+          <span style="color:#777; font-size:14px;">11:45 - 03:30</span>
+        </div>
+
+        <div style="
+          background:#f8f9ff;
+          padding:12px 15px;
+          border-radius:14px;
+          display:flex;
+          justify-content:space-between;
+          align-items:center;
+        ">
+          <div style="display:flex; align-items:center; gap:8px;">
+            <div style="width:10px; height:10px; background:#845ef7; border-radius:50%;"></div>
+            <span>مسار حي الروضة</span>
+          </div>
+          <span style="color:#777; font-size:14px;">11:45 - 03:30</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+<!-- STATS -->
+  <section style="max-width:1200px; margin:40px auto; padding:20px;">
+    <div style="
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:20px;
+    ">
+
+      <div style="
+        background:#0b1b3b;
+        color:white;
+        padding:25px;
+        border-radius:20px;
+        text-align:center;
+        box-shadow:0 8px 20px rgba(0,0,0,0.15);
+      ">
+        <div style="font-size:32px; font-weight:800;">99%</div>
+        <div style="font-size:15px; opacity:0.9;">رضا أولياء الأمور</div>
+      </div>
+
+      <div style="
+        background:#0b1b3b;
+        color:white;
+        padding:25px;
+        border-radius:20px;
+        text-align:center;
+        box-shadow:0 8px 20px rgba(0,0,0,0.15);
+      ">
+        <div style="font-size:32px; font-weight:800;">20+</div>
+        <div style="font-size:15px; opacity:0.9;">مسار مدرسي</div>
+      </div>
+
+      <div style="
+        background:#0b1b3b;
+        color:white;
+        padding:25px;
+        border-radius:20px;
+        text-align:center;
+        box-shadow:0 8px 20px rgba(0,0,0,0.15);
+      ">
+        <div style="font-size:32px; font-weight:800;">500+</div>
+        <div style="font-size:15px; opacity:0.9;">طالب يومياً</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section style="max-width:1200px; margin:40px auto; padding:20px;">
+    <h2 style="font-size:26px; font-weight:800; margin-bottom:10px;">كيف يعمل النظام؟</h2>
+    <p style="color:#555; margin-bottom:25px;">خطوات بسيطة تضمن لك تجربة مريحة وآمنة في إدارة رحلات الباص المدرسي.</p>
+
+    <div style="
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:20px;
+    ">
+
+      <div style="
+        background:white;
+        padding:20px;
+        border-radius:20px;
+        box-shadow:0 8px 20px rgba(0,0,0,0.08);
+      ">
+        <div style="
+          width:35px;
+          height:35px;
+          background:#ffc928;
+          border-radius:50%;
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          font-weight:bold;
+          margin-bottom:10px;
+        ">1</div>
+
+        <h3 style="margin:0 0 8px; font-size:17px;">سجّل ابنك</h3>
+        <p style="color:#666; font-size:14px;">
+          قم بتسجيل بيانات طفلك والمسار المناسب لكم.
+        </p>
+      </div>
+
+      <div style="
+        background:white;
+        padding:20px;
+        border-radius:20px;
+        box-shadow:0 8px 20px rgba(0,0,0,0.08);
+      ">
+        <div style="
+          width:35px;
+          height:35px;
+          background:#ffc928;
+          border-radius:50%;
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          font-weight:bold;
+          margin-bottom:10px;
+        ">2</div>
+
+        <h3 style="margin:0 0 8px; font-size:17px;">تابع الرحلة</h3>
+        <p style="color:#666; font-size:14px;">
+          تابع موقع الحافلة بشكل مباشر من تطبيقك.
+        </p>
+      </div>
+
+      <div style="
+        background:white;
+        padding:20px;
+        border-radius:20px;
+        box-shadow:0 8px 20px rgba(0,0,0,0.08);
+      ">
+        <div style="
+          width:35px;
+          height:35px;
+          background:#ffc928;
+          border-radius:50%;
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          font-weight:bold;
+          margin-bottom:10px;
+        ">3</div>
+
+        <h3 style="margin:0 0 8px; font-size:17px;">استقبل الإشعارات</h3>
+        <p style="color:#666; font-size:14px;">
+          احصل على إشعارات فور وصول الحافلة ومغادرتها.
+        </p>
+      </div>
+
+    </div>
+  </section>
+<!-- FINAL CTA -->
+  <section style="
+    background:#ffc928;
+    padding:35px 20px;
+    margin-top:40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    border-radius:20px;
+    max-width:1200px;
+    margin-left:auto;
+    margin-right:auto;
+  ">
+    <div>
+      <h2 style="margin:0; font-size:26px; font-weight:800; color:#0b1b3b;">
+        ابدأ رحلة آمنة اليوم!
+      </h2>
+      <p style="margin:5px 0 0; font-size:16px; color:#0b1b3b;">
+        انضم إلى مئات الأسر التي تثق بحافلتي لنقل أبنائهم
+      </p>
+    </div>
+
+    <div style="display:flex; gap:12px; margin-top:15px;">
+      <button onclick="location.href='register.html'" style="
+        background:#0b1b3b;
+        color:white;
+        padding:12px 22px;
+        border:none;
+        border-radius:30px;
+        font-size:15px;
+        cursor:pointer;
+      ">سجل الآن مجاناً</button>
+
+      <button onclick="location.href='contact.html'" style="
+        background:transparent;
+        border:2px solid #0b1b3b;
+        color:#0b1b3b;
+        padding:12px 22px;
+        border-radius:30px;
+        font-size:15px;
+        cursor:pointer;
+      ">تواصل معنا</button>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:#0b1b3b; color:white; padding:40px 20px; margin-top:40px;">
+    <div style="
+      max-width:1200px;
+      margin:auto;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:30px;
+    ">
+
+      <div>
+        <h3 style="margin:0 0 10px; font-size:18px;">تواصل معنا</h3>
+        <p style="margin:5px 0; color:#d0d7ff;">info@hafilti.com</p>
+        <p style="margin:5px 0; color:#d0d7ff;">920-000-000</p>
+        <p style="margin:5px 0; color:#d0d7ff;">المملكة العربية السعودية</p>
+      </div>
+
+      <div>
+        <h3 style="margin:0 0 10px; font-size:18px;">الصفحات</h3>
+        <a href="index.html" style="display:block; margin:5px 0; color:#d0d7ff;">الصفحة الرئيسية</a>
+        <a href="tracking.html" style="display:block; margin:5px 0; color:#d0d7ff;">تتبع مباشر</a>
+        <a href="register.html" style="display:block; margin:5px 0; color:#d0d7ff;">التسجيل</a>
+        <a href="contact.html" style="display:block; margin:5px 0; color:#d0d7ff;">الدعم الفني</a>
+      </div>
+
+      <div>
+        <h3 style="margin:0 0 10px; font-size:18px;">حافلتي - Hafilti</h3>
+        <p style="margin:5px 0; color:#d0d7ff;">
+          حلول نقل مدرسية مبتكرة تضمن السلامة والراحة لأبنائك.
+        </p>
+      </div>
+
+    </div>
+
+    <div style="text-align:center; margin-top:25px; color:#9aa4e0; font-size:14px;">
       © 2026 حافلتي - نظام إدارة الحافلات المدرسية.
     </div>
   </footer>
