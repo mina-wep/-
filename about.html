@@ -3,53 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <title>عن المشروع</title>
+
     <style>
         body {
-            font-family: "Tajawal", sans-serif;
-            background-color: #f7f9fc;
             margin: 0;
+            font-family: "Tajawal", sans-serif;
+            background: linear-gradient(135deg, #1e90ff, #7ed957, #ffdd57);
+            background-size: 300% 300%;
+            animation: gradientMove 12s ease infinite;
+            color: #fff;
+            padding-top: 90px;
         }
-        header {
-            background-color: #4a90e2;
-            padding: 20px;
-            text-align: center;
-            color: white;
-            font-size: 26px;
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
-        .content {
-            width: 70%;
+
+        .topbar {
+            width: 100%;
+            height: 75px;
+            background-color: #FFF3B0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 0 25px;
+            position: fixed;
+            top: 0;
+            right: 0;
+            z-index: 9999;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .logo {
+            height: 60px;
+            cursor: pointer;
+        }
+
+        .section {
+            width: 80%;
             margin: 40px auto;
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 0 10px #ddd;
-            font-size: 20px;
-            line-height: 1.8;
-        }
-        a {
-            display: block;
+            background: rgba(255, 255, 255, 0.18);
+            padding: 35px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
             text-align: center;
-            margin-top: 20px;
-            color: #4a90e2;
-            text-decoration: none;
+        }
+
+        h1 {
+            font-size: 38px;
+            font-weight: 800;
+        }
+
+        p {
+            font-size: 20px;
+            line-height: 1.9;
         }
     </style>
 </head>
+
 <body>
 
-<header>عن مشروع حافلتي</header>
+<div class="topbar">
+    <a href="index.html">
+        <img src="https://raw.githubusercontent.com/mina-wep/-/refs/heads/main/WhatsApp%20Image%202026-04-16%20at%202.24.43%20AM.jpeg" class="logo">
+    </a>
+</div>
 
-<div class="content">
+<div class="section">
+    <h1>عن نظام حافلتي</h1>
     <p>
-        مشروع "حافلتي" هو نظام بسيط يساعد المدرسة وولي الأمر على متابعة تسجيل الطلاب
-        وتنظيم عملية النقل المدرسي بطريقة سهلة وواضحة.
+        نظام "حافلتي" هو منصة مبتكرة تهدف إلى تحسين تجربة النقل المدرسي للطلاب وأولياء الأمور.
+        يوفر النظام طريقة سهلة لتنظيم الرحلات، متابعة الحافلات، وتسهيل التواصل بين المدرسة والأسرة.
     </p>
-
-    <p>
-        يهدف المشروع إلى توفير تجربة آمنة وسهلة للطلاب، مع واجهة بسيطة وسريعة الاستخدام.
-    </p>
-
-    <a href="index.html">العودة للصفحة الرئيسية</a>
 </div>
 
 </body>
