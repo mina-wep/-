@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>عرض الشكاوي - حافلتي</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Tajawal", sans-serif;
+      background: #f5f7fb;
+      color: #0b1b3b;
+    }
+
+    header {
+      background: #0b113b;
+      padding: 15px 0;
+      box-shadow: 0 20px 120px rgba(0,0,0,0.15);
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: white;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+    }
+
+    .logo-icon {
+      background: #ffc028;
+      width: 45px;
+      height: 45px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      font-weight: bold;
+      color: #0b113b;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+      line-height: 1.8;
+    }
+
+    .btn-home {
+      margin-top: 20px;
+      padding: 12px 25px;
+      background: #ffc928;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #0b1b3b;
+      cursor: pointer;
+      transition: 0.2s;
+      display: block;
+      width: 200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn-home:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <nav>
+      <div class="logo" onclick="location.href='index.html'">
+        <div class="logo-icon">🚌</div>
+        <strong>حافلتي</strong>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h2 style="text-align:center;">الشكاوي الواردة</h2>
+    <div id="complaintsArea"></div>
+
+    <button class="btn-home" onclick="location.href='index.html'">العودة للصفحة الرئيسية</button>
+  </div>
+
+  <script>
+    const area = document.getElementById("complaintsArea");
+    const list = JSON.parse(localStorage.getItem("complaintsList")) || [];
+
+    if (list.length === 0) {
+      area.innerHTML = "<p style='text-align:center; opacity:0.7;'>لا توجد شكاوي حتى الآن</p>";
+    } else {
+      list.forEach(c => {
+        area.innerHTML += `
+          <div class="card">
+            <strong>الاسم:</strong> ${c.name}<br>
+            <strong>البريد:</strong> ${c.email}<br>
+            <strong>الباص:</strong> ${c.bus}<br>
+            <strong>الرسالة:</strong> ${c.message}<br>
+            <strong>التاريخ:</strong> ${c.date}
+          </div>
+        `;
+      });
+    }
+  </script>
+
+</body>
+</html>
