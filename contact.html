@@ -1,0 +1,47 @@
+<!-- CONTACT FORM -->
+<div class="container">
+  <h2>تواصل معنا</h2>
+  <p style="opacity:0.8; margin-bottom:20px;">
+    يسعدنا تواصلك معنا في أي وقت
+  </p>
+
+  <input type="text" id="name" placeholder="الاسم الكامل">
+  <input type="email" id="email" placeholder="البريد الإلكتروني">
+
+  <!-- اختيار الباص -->
+  <select id="bus" style="
+      width: 94%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      color:#0b1b3b;">
+    <option value="">اختر الباص</option>
+    <option value="باص حي المشهد أ">باص حي المشهد أ</option>
+    <option value="باص حي المشهد ب">باص حي المشهد ب</option>
+    <option value="باص حي المشهد ج">باص حي المشهد ج</option>
+    <option value="باص حي الزهرة">باص حي الزهرة</option>
+    <option value="باص حي الروضة">باص حي الروضة</option>
+  </select>
+
+  <textarea id="message" placeholder="اكتب رسالتك هنا..."></textarea>
+
+  <button class="btn-send" onclick="sendMessage()">إرسال الرسالة</button>
+</div>
+
+<script>
+  function sendMessage() {
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const bus = document.getElementById("bus").value;
+    const message = document.getElementById("message").value;
+
+    if (!name || !email || !bus || !message) {
+      alert("الرجاء تعبئة جميع الحقول");
+      return;
+    }
+
+    alert("تم إرسال رسالتك بنجاح! سنعود إليك قريباً.");
+  }
+</script>
