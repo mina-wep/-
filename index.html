@@ -5,94 +5,70 @@
   <title>حافلتي - رحلتك المدرسية آمنة ومريحة</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<style>
-  body {
-    margin: 0;
-    font-family: "Tajawal", sans-serif;
-    background: #f5f7fb;
-    color: #101b33;
-  }
-
+<style>  
   header {
-    background:#0b113b;
-    padding:14px 0;
-    box-shadow:0 0 25px rgba(0,0,0,0.35);
-    position:sticky;
-    top:0;
-    z-index:999;
-  }
+  background:#0b113b;
+  padding:14px 0;
+  box-shadow:0 0 25px rgba(0,0,0,0.35);
+  position:sticky;
+  top:0;
+  z-index:999;
+}
 
-  .nav {
-    max-width:1100px;
-    margin:0 auto;
-    padding:0 20px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    color:#fff;
-  }
+.nav {
+  max-width:1100px;
+  margin:0 auto;
+  padding:0 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  color:#fff;
+}
 
-  .logo {
-    display:flex;
-    align-items:center;
-    cursor:pointer;
-    gap:12px;
-  }
+.logo img {
+  height:auto;
+  width:auto;
+  max-height:80px; /* يخلي الصورة طبيعية بدون قص */
+  object-fit:contain;
+  border-radius:0; /* بدون خلفية وبدون قص */
+  background:none;
+  padding:0;
+  box-shadow:none; /* شيل الـGlow */
+}
 
-  .logo img {
-    width:70px;
-    height:70px;
-    border-radius:16px;
-    object-fit:cover;
-    background:white;
-    padding:4px;
-    box-shadow:0 0 12px rgba(255,255,255,0.55); /* GLOW */
-  }
+.nav_links {
+  display:flex;
+  align-items:center;
+  gap:20px;
+}
 
-  .logo-text_title {
-    font-size:20px;
-    font-weight:800;
-  }
+.nav_links a {
+  color:#fff;
+  text-decoration:none;
+  font-size:15px;
+  opacity:0.9;
+  transition:0.25s;
+}
 
-  .logo-text_sub {
-    font-size:13px;
-    opacity:0.8;
-  }
+.nav_links a:hover {
+  opacity:1;
+}
 
-  .nav_links {
-    display:flex;
-    align-items:center;
-    gap:20px;
-  }
+.btn-login-nav {
+  padding:8px 18px;
+  background:#ffc928;
+  border:none;
+  border-radius:20px;
+  font-size:14px;
+  font-weight:700;
+  color:#0b113b;
+  cursor:pointer;
+  transition:0.25s;
+}
 
-  .nav_links a {
-    color:#fff;
-    text-decoration:none;
-    font-size:15px;
-    opacity:0.9;
-    transition:0.25s;
-  }
-
-  .nav_links a:hover {
-    opacity:1;
-    text-shadow:0 0 8px #fff; /* GLOW */
-  }
-
-  .btn-login-nav {
-    padding:8px 18px;
-    background:#ffc928;
-    border:none;
-    border-radius:20px;
-    font-size:14px;
-    font-weight:700;
-    color:#0b113b;
-    cursor:pointer;
-    transition:0.25s;
-  }
-
-  .btn-login-nav:hover {
-    box-shadow:0 0 12px #ffc928; /* GLOW */
-  }
+.btn-login-nav:hover {
+  opacity:0.9;
+}
 </style>
  
  
@@ -106,10 +82,6 @@
 
     <div class="logo" onclick="location.href='index.html'">
       <img src="https://raw.githubusercontent.com/mina-wep/mina-wep.github.io/refs/heads/main/WhatsApp%20Image%202026-04-22%20at%202.38.28%20PM.jpeg">
-      <div>
-        <div class="logo-text_title">حافلتي</div>
-        <div class="logo-text_sub">حلول نقل مدرسية مبتكرة</div>
-      </div>
     </div>
 
     <div class="nav_links">
@@ -118,7 +90,7 @@
       <a href="routes.html">المسارات</a>
       <a href="register.html">التسجيل</a>
       <a href="support.html">الدعم</a>
-      <button onclick="location.href='login.html'" class="btn-login-nav">الدخول</button>
+      <button onclick="location.href='login.html'" class="btn-login-nav">تسجيل الدخول</button>
     </div>
 
   </div>
