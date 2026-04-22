@@ -13,42 +13,72 @@
       color: #0b1b3b;
     }
 
+    /* الهيدر */
     header {
-      background: #0b1b3b;
-      padding: 15px 0;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      background:#0b113b;
+      padding:14px 0;
+      box-shadow:0 0 25px rgba(0,0,0,0.35);
+      position:sticky;
+      top:0;
+      z-index:999;
     }
 
     .nav {
-      max-width: 1200px;
-      margin: auto;
-      padding: 0 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      color: white;
+      max-width:1100px;
+      margin:0 auto;
+      padding:0 20px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      color:#fff;
     }
 
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      cursor: pointer;
+    .logo img {
+      height:auto;
+      width:auto;
+      max-height:80px;
+      object-fit:contain;
+      border-radius:0;
+      background:none;
+      padding:0;
+      box-shadow:none;
     }
 
-    .logo-icon {
-      background: #ffc928;
-      width: 45px;
-      height: 45px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 22px;
-      font-weight: bold;
-      color: #0b1b3b;
+    .nav_links {
+      display:flex;
+      align-items:center;
+      gap:20px;
     }
 
+    .nav_links a {
+      color:#fff;
+      text-decoration:none;
+      font-size:15px;
+      opacity:0.9;
+      transition:0.25s;
+    }
+
+    .nav_links a:hover {
+      opacity:1;
+    }
+
+    .btn-login-nav {
+      padding:8px 18px;
+      background:#ffc928;
+      border:none;
+      border-radius:20px;
+      font-size:14px;
+      font-weight:700;
+      color:#0b113b;
+      cursor:pointer;
+      transition:0.25s;
+    }
+
+    .btn-login-nav:hover {
+      opacity:0.9;
+    }
+
+    /* محتوى الداشبورد */
     .info-box {
       max-width: 500px;
       margin: 20px auto;
@@ -68,7 +98,6 @@
       color: #0b1b3b;
     }
 
-    /* توزيع البطاقات */
     .cards-container {
       max-width: 900px;
       margin: 40px auto;
@@ -77,16 +106,9 @@
       gap: 20px;
     }
 
-    /* أنيميشن الظهور */
     @keyframes fadeUp {
-      0% {
-        opacity: 0;
-        transform: translateY(25px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      0% { opacity: 0; transform: translateY(25px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
 
     .card {
@@ -101,7 +123,6 @@
       animation: fadeUp 0.8s ease forwards;
     }
 
-    /* تكبير عند المرور */
     .card:hover {
       transform: scale(1.05);
     }
@@ -123,22 +144,28 @@
 
 <body>
 
+  <!-- الهيدر الجديد -->
   <header>
     <div class="nav">
+
       <div class="logo" onclick="location.href='index.html'">
-        <img src="https://raw.githubusercontent.com/mina-wep/mina-wep.github.io/refs/heads/main/WhatsApp%20Image%202026-04-22%20at%202.38.28%20PM.jpeg"
-     style="width:55px; height:55px; border-radius:12px; object-fit:cover;">
-        <div>
-          <div style="font-size:18px; font-weight:800;">حافلتي</div>
-          <div style="font-size:13px; opacity:0.8;">حلول نقل مدرسية مبتكرة</div>
-        </div>
+        <img src="https://raw.githubusercontent.com/mina-wep/mina-wep.github.io/refs/heads/main/WhatsApp%20Image%202026-04-22%20at%202.38.28%20PM.jpeg">
       </div>
+
+      <div class="nav_links">
+        <a href="index.html">الصفحة الرئيسية</a>
+        <a href="tracking.html">تتبع مباشر</a>
+        <a href="routes.html">المسارات</a>
+        <a href="register.html">التسجيل</a>
+        <a href="support.html">الدعم</a>
+        <button onclick="location.href='login.html'" class="btn-login-nav">الدخول</button>
+      </div>
+
     </div>
   </header>
 
   <h2 id="welcomeText" style="text-align:center; margin:20px 0; font-size:28px; font-weight:800;"></h2>
 
-  <!-- التاريخ الكامل -->
   <div class="date-box" id="todayDate"></div>
 
   <div class="info-box">
@@ -164,7 +191,6 @@
   <button class="logout-btn" onclick="logout()">تسجيل خروج</button>
 
   <script>
-    // عرض بيانات المستخدم
     document.getElementById("welcomeText").innerText =
       "مرحباً، " + (localStorage.getItem("userName") || "ضيف");
 
@@ -177,7 +203,6 @@
     document.getElementById("lastAttendance").innerText =
       localStorage.getItem("attendance") || "—";
 
-    // اليوم + التاريخ الميلادي + الهجري
     function updateDates() {
       const today = new Date();
 
