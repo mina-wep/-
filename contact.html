@@ -34,14 +34,8 @@
     }
 
     .logo img {
-      height:auto;
-      width:auto;
       max-height:80px;
       object-fit:contain;
-      border-radius:0;
-      background:none;
-      padding:0;
-      box-shadow:none;
     }
 
     .nav_links {
@@ -71,11 +65,6 @@
       font-weight:700;
       color:#0b113b;
       cursor:pointer;
-      transition:0.25s;
-    }
-
-    .btn-login-nav:hover {
-      opacity:0.9;
     }
 
     /* نموذج التواصل */
@@ -114,22 +103,32 @@
       font-weight: bold;
       color: #0b1b3b;
       cursor: pointer;
-      transition: 0.2s;
-      display: block;
       width: 200px;
       margin-left: auto;
       margin-right: auto;
     }
 
-    .btn-send:hover, .btn-home:hover {
-      transform: scale(1.05);
+    /* صندوق النجاح */
+    #successBox {
+      display:none;
+      position:fixed;
+      top:50%;
+      left:50%;
+      transform:translate(-50%, -50%);
+      background:white;
+      padding:30px;
+      border-radius:20px;
+      box-shadow:0 8px 25px rgba(0,0,0,0.2);
+      text-align:center;
+      width:300px;
+      z-index:9999;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- الهيدر الجديد -->
+  <!-- الهيدر -->
   <header>
     <div class="nav">
 
@@ -170,9 +169,20 @@
 
     <textarea id="message" placeholder="اكتب رسالتك هنا..."></textarea>
 
-    <button class="btn-send" onclick="sendMessage()">إرسال الملاحظة</button>
+    <button class="btn-send" onclick="sendMessage()">إرسال الشكوى</button>
 
     <button class="btn-home" onclick="location.href='index.html'">العودة للصفحة الرئيسية</button>
+  </div>
+
+  <!-- صندوق النجاح -->
+  <div id="successBox">
+    <h3 style="margin-bottom:10px;">تم إرسال ملاحظتك بنجاح!</h3>
+
+    <button onclick="location.href='index.html'"
+            style="padding:10px 20px; background:#ffc928; border:none; border-radius:25px;
+            font-size:15px; font-weight:bold; color:#0b1b3b; cursor:pointer;">
+      العودة للصفحة الرئيسية
+    </button>
   </div>
 
   <script>
@@ -199,22 +209,9 @@
       list.push(complaint);
       localStorage.setItem("complaintsList", JSON.stringify(list));
 
-      alert("تم إرسال الشكوى بنجاح!");
+      // إظهار رسالة النجاح
+      document.getElementById("successBox").style.display = "block";
     }
-
-    window.onload = function () {
-      document.getElementById("name").value =
-        localStorage.getItem("contactName") || "";
-
-      document.getElementById("email").value =
-        localStorage.getItem("contactEmail") || "";
-
-      document.getElementById("bus").value =
-        localStorage.getItem("contactBus") || "";
-
-      document.getElementById("message").value =
-        localStorage.getItem("contactMessage") || "";
-    };
   </script>
 
 </body>
