@@ -69,6 +69,120 @@
 .btn-login-nav:hover {
   opacity:0.9;
 }
+  /* القسم الرئيسي */
+.hero {
+  padding: 50px 0;
+}
+
+.hero-container {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+/* الكرت */
+.hero-card {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.hero-time {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.hero-title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.hero-sub {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.hero-desc {
+  margin-top: 15px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* النص */
+.hero-text h1 {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.hero-text p {
+  font-size: 16px;
+  line-height: 1.8;
+  opacity: 0.9;
+}
+
+/* الأزرار */
+.hero-buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+.btn-primary {
+  background: #ffc928;
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: none;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  background: white;
+  border: 2px solid #0b113b;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* مميزاتنا */
+.features {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.features-grid {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.feature-box {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  transition: 0.3s;
+  border: 2px solid transparent;
+}
+
+.feature-box:hover {
+  border: 2px solid #ffc928;
+  box-shadow: 0 0 15px #ffc928;
+  transform: translateY(-5px);
+  cursor: pointer;
+}
 </style>
  
  
@@ -96,8 +210,17 @@
   </div>
 </header>
   <!-- HERO -->
-  <section class="hero">
-    <div>
+<section class="hero">
+  <div class="hero-container">
+
+    <div class="hero-card">
+      <div class="hero-time">05:30 ص</div>
+      <div class="hero-title">SCHOOL BUS</div>
+      <div class="hero-sub">SCHOOL</div>
+      <p class="hero-desc">رحلة آمنة من البيت إلى المدرسة</p>
+    </div>
+
+    <div class="hero-text">
       <h1>حافلتي - رحلتك المدرسية آمنة ومريحة!</h1>
       <p>
         حلول نقل مدرسية مبتكرة ومسارات مخصصة تضمن السلامة والراحة لأبنائك في كل رحلة،
@@ -105,37 +228,41 @@
       </p>
 
       <div class="hero-buttons">
-        <button class="btn-primary" onclick="location.href='register.html'">سجل الآن </button>
+        <button class="btn-primary" onclick="location.href='register.html'">سجل الآن</button>
         <button class="btn-secondary" onclick="location.href='contact.html'">تواصل معنا</button>
       </div>
     </div>
 
-    <div class="hero-card">
-      <div class="hero-card-top">
-        <span>رحلة اليوم</span>
-        <span>05:30 ص</span>
-      </div>
+  </div>
+</section>
 
-      <div class="hero-bus-box">
-        <div class="bus-icon">SCHOOL</div>
+<section class="features">
+  <h2>مميزاتنا</h2>
 
-        <div>
-          <div style="font-weight: bold; margin-bottom: 5px;">SCHOOL BUS</div>
+  <div class="features-grid">
 
-          <div class="passengers">
-            <div class="p p1"></div>
-            <div class="p p2"></div>
-            <div class="p p3"></div>
-            <div class="p p4"></div>
-          </div>
-
-          <div style="font-size: 13px; color: #0b1b3b;">
-            رحلة آمنة من البيت إلى المدرسة
-          </div>
-        </div>
-      </div>
+    <div class="feature-box">
+      <h3>أمان مضمون</h3>
+      <p>ضمان السلامة في كل رحلة</p>
     </div>
-  </section>
+
+    <div class="feature-box">
+      <h3>تتبع مباشر</h3>
+      <p>شاهد حافلتك على الخريطة</p>
+    </div>
+
+    <div class="feature-box">
+      <h3>سائقون مؤهلون</h3>
+      <p>سائقون مدربون لضمان السلامة</p>
+    </div>
+
+    <div class="feature-box">
+      <h3>آليات تتبع ذكية</h3>
+      <p>تتبع جميع الرحلات بأمان</p>
+    </div>
+
+  </div>
+</section>
 <!-- FEATURES -->
   <section style="max-width:1200px; margin:40px auto; padding:20px;">
     <h2 style="font-size:26px; font-weight:800; margin-bottom:10px;">مميزاتنا</h2>
