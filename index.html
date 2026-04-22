@@ -5,7 +5,7 @@
   <title>حافلتي - رحلتك المدرسية آمنة ومريحة</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <style>
+<style>
   body {
     margin: 0;
     font-family: "Tajawal", sans-serif;
@@ -13,11 +13,14 @@
     color: #101b33;
   }
 
-  /* الهيدر الجديد */
+  /* الهيدر */
   header {
     background:#0b113b;
-    padding:12px 0;
-    box-shadow:0 10px 40px rgba(0,0,0,0.25);
+    padding:14px 0;
+    box-shadow:0 0 25px rgba(0,0,0,0.35);
+    position:sticky;
+    top:0;
+    z-index:999;
   }
 
   .nav {
@@ -34,24 +37,46 @@
     display:flex;
     align-items:center;
     cursor:pointer;
+    gap:12px;
+  }
+
+  .logo img {
+    width:70px;
+    height:70px;
+    border-radius:16px;
+    object-fit:cover;
+    background:white;
+    padding:4px;
+    box-shadow:0 0 12px rgba(255,255,255,0.55); /* GLOW */
+  }
+
+  .logo-text-title {
+    font-size:20px;
+    font-weight:800;
+  }
+
+  .logo-text-sub {
+    font-size:13px;
+    opacity:0.8;
   }
 
   .nav-links {
     display:flex;
     align-items:center;
-    gap:18px;
+    gap:20px;
   }
 
   .nav-links a {
     color:#fff;
     text-decoration:none;
-    font-size:14px;
+    font-size:15px;
     opacity:0.9;
     transition:0.25s;
   }
 
   .nav-links a:hover {
     opacity:1;
+    text-shadow:0 0 8px #fff; /* GLOW */
   }
 
   .btn-login-nav {
@@ -63,8 +88,14 @@
     font-weight:700;
     color:#0b113b;
     cursor:pointer;
+    transition:0.25s;
+  }
+
+  .btn-login-nav:hover {
+    box-shadow:0 0 12px #ffc928; /* GLOW */
   }
 </style>
+ 
 </head>
 
 <body>
@@ -72,13 +103,12 @@
   <!-- HEADER --> 
 <header>
   <div class="nav">
-    <div class="logo" onclick="location.href='index.html'">
-      <img src="https://raw.githubusercontent.com/mina-wep/mina-wep.github.io/refs/heads/main/WhatsApp%20Image%202026-04-22%20at%202.38.28%20PM.jpeg"
-           style="width:70px; height:70px; border-radius:16px; object-fit:contain; background:#ffffff; padding:4px; box-shadow:0 0 8px rgba(0,0,0,0.08);">
 
-      <div style="margin-right:10px;">
-        <div style="font-size:20px; font-weight:800;">حافلتي</div>
-        <div style="font-size:13px; opacity:0.8;">حلول نقل مدرسية مبتكرة</div>
+    <div class="logo" onclick="location.href='index.html'">
+      <img src="https://raw.githubusercontent.com/mina-wep/mina-wep.github.io/refs/heads/main/WhatsApp%20Image%202026-04-22%20at%202.38.28%20PM.jpeg">
+      <div>
+        <div class="logo-text-title">حافلتي</div>
+        <div class="logo-text-sub">حلول نقل مدرسية مبتكرة</div>
       </div>
     </div>
 
@@ -90,6 +120,7 @@
       <a href="support.html">الدعم</a>
       <button onclick="location.href='login.html'" class="btn-login-nav">الدخول</button>
     </div>
+
   </div>
 </header>
   <!-- HERO -->
